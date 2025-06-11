@@ -760,7 +760,7 @@ button:hover {
 }
 
 .team-member {
-  background: purple;
+  background: white;
   padding: 8px;
   border-radius: 5px;
   max-width: 280px;
@@ -771,7 +771,7 @@ button:hover {
 
 .team-member:hover {
   transform: translateY(-10px);
-background-color: white;
+background-color: whitesmoke;
 
 }
 
