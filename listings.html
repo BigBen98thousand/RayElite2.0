@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listings | RayElite Real Estate</title>
+  <link rel="stylesheet" href="ray.css" />
+  <style>
+    /* Responsive Navbar (No JS) */
+    .navbar {
+      background-color: black;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+    }
+
+    .logo img {
+      width: 120px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: plum;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: black;
+        display: none;
+        text-align: center;
+      }
+
+      .nav-links a {
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      #menu-toggle:checked + .logo + .hamburger + .nav-links {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: black;
+      color: white;
+      margin: 0;
+    }
+
+    .listings-section {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .listings-title {
+      text-align: center;
+      color: plum;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .listing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .listing-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      color: black;
+      
+    }
+
+    .listing-card:hover {
+      transform: scale(1.04);
+      
+    }
+
+    .listing-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .listing-details {
+      padding: 1rem;
+    }
+
+    .listing-details h3 {
+      margin-bottom: 0.5rem;
+      color: purple;
+    }
+
+    .listing-details p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .listing-details .price {
+      font-weight: bold;
+      color: green;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      padding: 2rem 1rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    footer h4 {
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <input type="checkbox" id="menu-toggle" />
+      <div class="logo">
+        <a href="index.html"><img src="Logo.jpeg" alt="RayElite Logo" /></a>
+      </div>
+      <label for="menu-toggle" class="hamburger">&#9776;</label>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="listings.html" class="active">Listings</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Listings -->
+  <section class="listings-section">
+    <h2 class="listings-title">Our Featured Listings</h2>
+    <div class="listing-grid">
+      <!-- CARD TEMPLATE (10 total) -->
+      <div class="listing-card">
+        <img src="listing1 rental.jpeg" alt="Property 1">
+        <div class="listing-details">
+          <h3>3-Bedroom Flat</h3>
+          <p>Location: Lekki, Lagos</p>
+          <p class="price">₦3,000,000</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="listing7.jpg" alt="Property 2">
+        <div class="listing-details">
+          <h3>Luxury Duplex</h3>
+          <p>Location: Asokoro, Abuja</p>
+          <p class="price">₦90,000,000</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="listing12.jpg" alt="Property 3">
+        <div class="listing-details">
+          <h3>Mini Flat</h3>
+          <p>Location: Yaba, Lagos</p>
+          <p class="price">₦700,000/year</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="plot.jpg" alt="Property 4">
+        <div class="listing-details">
+          <h3>Plot of Land</h3>
+          <p>Location: Benin City</p>
+          <p class="price">₦3,000,000</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="office2.jpg" alt="Property 5">
+        <div class="listing-details">
+          <h3>Office Space</h3>
+          <p>Location: Ikeja, Lagos</p>
+          <p class="price">₦2,000,000/year</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="listing8.jpg" alt="Property 6">
+        <div class="listing-details">
+          <h3>4-Bedroom Duplex</h3>
+          <p>Location: Gwarinpa, Abuja</p>
+          <p class="price">₦75,000,000</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="listing11.jpg" alt="Property 7">
+        <div class="listing-details">
+          <h3>1-Bedroom Apartment</h3>
+          <p>Location: Port Harcourt</p>
+          <p class="price">₦1,200,000/year</p>
+        </div>
+      </div>
+          <div class="listing-card">
+        <img src="plot.jpg" alt="Property 8">
+        <div class="listing-details">
+          <h3>Land (Corner Piece)</h3>
+          <p>Location: Uyo</p>
+          <p class="price">₦2,500,000</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="office1.jpg" alt="Property 9">
+        <div class="listing-details">
+          <h3>Shop Space</h3>
+          <p>Location: Warri</p>
+          <p class="price">₦800,000/year</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="penthouse.jpg" alt="Property 10">
+        <div class="listing-details">
+          <h3>Luxury Penthouse</h3>
+          <p>Location: Victoria Island, Lagos</p>
+          <p class="price">₦20,000,000</p>
+        </div>
+      </div>
+    </div>
+ </section>
+
+  <!-- Footer -->
+  <footer>
+    <h4>RayElite Real Estate</h4>
+    <p>Email: Raymondguobadia84@gmail.com</p>
+    <p>Phone: +234 8141883102 | +234 9125473856</p>
+    <p>Facebook: Ray elite real estate services limited</p>
+    <p>&copy; 2025 RayElite Real Estate. All rights reserved.</p>
+  </footer>
+
+</body>
+</html
